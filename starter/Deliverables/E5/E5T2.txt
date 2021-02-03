@@ -1,0 +1,41 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+You could use any of the below tools some are speciically for AWS Cloudformation and some are for Terraform
+Cfripper
+Cloudsploit
+cfn-lint
+Chef inspec
+Open policy agent / Regula
+Terrascan
+
+### Example vulnerability
+An IAM role assigned a policy that allows admin access, Disk storage has been provisioned without volume encryption enabled or a server instance has been created and configured to allow RDP connections from the public internet.
+
+##Scan AMI’s or containers for OS vulnerabilities
+Tools you can use for scanning for OS vulnerabilities. Some are for EC2 and some are for containers
+AWS Inspector
+Clair
+Anchore
+Trivy
+aquasec
+sysdig
+twistlock
+
+### Example vulnerability
+Machine being publicly accessable. if a port is exposed that may not be expected to be open. Allowing SSH login
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+These are some of the tools you can use for configuration vulnerabilities. These some are open source and some are paid resources.
+AWS Config
+Prowler
+Scout2
+Cloudsploit
+CloudCustodian
+Fugue
+Palo Alto Prisma Cloud
+CloudConformity
+CheckPoint CloudGuard Dome9
+
+### Example vulnerability
+An EC2 instance is configured to be open RDP to the open internet and an s3 bucket isn't encrypted and it should be.

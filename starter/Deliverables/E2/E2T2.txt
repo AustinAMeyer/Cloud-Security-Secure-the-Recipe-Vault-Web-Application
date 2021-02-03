@@ -1,0 +1,13 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+1. Looks like there is a vulnerability that is caused by the encryption not being enabled during the cloudformation script
+2. S3 buckets not encrypted and should be
+3. S3 buckets should be using SSL
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+1. to fix this all that would need to happen is in the c3-app.yml file in the ec2 instance creation portion you should add Encrypted: true
+2. You could add encryption to the c3-s3.yml file with something like this
+ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: 'aws:kms'
+              KMSMasterKeyID: KMS-KEY
+

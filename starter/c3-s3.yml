@@ -1,32 +1,32 @@
 Description:  This template deploys an S3 bucket for storage of recipes.
 
 Resources:
-  S3BucketRecipesFree:
+  S3BucketRecipesFreeAAM:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Join [ "-", [ "cand-c3-free-recipes", !Ref 'AWS::AccountId' ] ]
-  S3BucketRecipesSecret:
+      BucketName: !Join [ "-", [ "cand-c3-free-recipes-aam", !Ref 'AWS::AccountId' ] ]
+  S3BucketRecipesSecretAAM:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Join [ "-", [ "cand-c3-secret-recipes", !Ref 'AWS::AccountId' ] ]
-  S3BucketVPCFlowLogs:
+      BucketName: !Join [ "-", [ "cand-c3-secret-recipes-aam", !Ref 'AWS::AccountId' ] ]
+  S3BucketVPCFlowLogsAAM:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: !Join [ "-", [ "cand-c3-vpc-flow-logs", !Ref 'AWS::AccountId' ] ]
+        BucketName: !Join [ "-", [ "cand-c3-vpc-flow-logs-aam", !Ref 'AWS::AccountId' ] ]
 
 Outputs:
   BucketNameRecipesFree:
-    Value: !Ref 'S3BucketRecipesFree'
+    Value: !Ref 'S3BucketRecipesFreeAAM'
     Description: Name of the Amazon S3 bucket that you will upload free recipes to.
     Export:
-      Name: BucketNameRecipesFree
+      Name: BucketNameRecipesFreeAAM
   BucketNameRecipesSecret:
-    Value: !Ref 'S3BucketRecipesSecret'
+    Value: !Ref 'S3BucketRecipesSecretAAM'
     Description: Name of the Amazon S3 bucket that you will upload secret recipes to.
     Export:
-      Name: BucketNameRecipesSecret
+      Name: BucketNameRecipesSecretAAM
   BucketArnVPCFlowLogs:
-    Value: !GetAtt S3BucketVPCFlowLogs.Arn
+    Value: !GetAtt S3BucketVPCFlowLogsAAM.Arn
     Description: Arn of the Amazon S3 bucket that have vpc flow logs for this project
     Export:
-      Name: BucketArnVPCFlowLogs
+      Name: BucketArnVPCFlowLogsAAM

@@ -1,0 +1,11 @@
+
+
+# Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
+We could close port 22 in the security group
+We could set up the device to not need a keypair at all which would completely shut down the ability to access the machine
+We could turn off 
+
+
+# Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials were compromised how could we have prevented access to sensitive data.
+We could have set up role based accss for the buckets. The one for the free recipe could be set up to allow read only access from your webserver and read and write access via a different role
+For the secret bucket we could setup role based access that only allows access from specific users 

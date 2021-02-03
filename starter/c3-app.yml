@@ -90,8 +90,8 @@ Resources:
               systemctl daemon-reload
               sleep 30
               service flask restart
-            - S3FreeRecipies: !ImportValue BucketNameRecipesFree
-              S3SecretRecipies: !ImportValue BucketNameRecipesSecret
+            - S3FreeRecipies: !ImportValue BucketNameRecipesFreeAAM
+              S3SecretRecipies: !ImportValue BucketNameRecipesSecretAAM
 
 # Add code for Exercise 3
 
