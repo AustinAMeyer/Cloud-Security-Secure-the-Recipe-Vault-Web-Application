@@ -121,7 +121,7 @@ https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks
  
 Obtain the name of the S3 bucket by navigating to the Outputs section of the stack:
  
-![Outputs Section](s3stack_output.png)
+![Outputs Section](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/s3stack_output.png)
  
 Note down the names of the two other buckets that have been created, one for free recipes and one for secret recipes.  You will need the bucket names to upload example recipe data to the buckets and to run the attack scripts.
  
@@ -131,7 +131,7 @@ Note down the names of the two other buckets that have been created, one for fre
  
 You can get these from the Outputs section of the **c3-app** stack.
  
-![Outputs](starter/outputs.png)
+![Outputs](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/outputs.png)
  
 #### 3.  Upload data to S3 buckets
 Upload the free recipes to the free recipe S3 bucket from step 2. Do this by typing this command into the console (you will replace `<BucketNameRecipesFree>` with your bucket name):
@@ -162,7 +162,9 @@ The AMIs specified in the cloud formation template exist in the us-east-1 (N. Vi
 Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security. List these 2 practices, and a justification for your choices, in the text file named E1T4.txt.
  
 **Deliverables:** 
-- **E1T4.txt** - Text file identifying 2 poor security practices with justification. 
+- **E1T5.txt** - Text file identifying 2 poor security practices with justification. 
+
+You can find my first deliverable here: [E1T5.txt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E1/E1T5.txt)
  
 ## Exercise 2: Enable Security Monitoring
  
@@ -214,6 +216,12 @@ Research and analyze which of the vulnerabilities appear to be related to the co
 - **E2T2_inspector.png** - Screenshot of AWS Inspector showing scan results.
 - **E2T2.png_securityhub.png** - Screenshot of AWS Security Hub showing compliance standards for CIS foundations.
 - **E2T2.txt** - Provide recommendations on how to remediate the vulnerabilities.
+
+You can find my second deliverable here: 
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E2/E2T2_config.png "E2T2_config.png")
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E2/E2T2_inspector.png "E2T2_inspector.png")
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E2/E2T2_securityhub.png "E2T2_securityhub.png")
+[E1T5.txt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E2/E2T2.txt)
  
 ## Exercise 3 - Attack Simulation
  
@@ -257,6 +265,10 @@ Submit text answers in E3T1.txt.
 **Deliverables:**
 - **E3T1_guardduty.png** - Screenshot of Guard Duty findings specific to the Exercise 3, Task 1 attack.
 - **E3T1.txt** - Answer to the questions at the end of Exercise 3, Task 1.
+
+You can find my third deliverable part one here:
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E3/E3T1_guardduty.png "3T1_guardduty.png")
+[E3T1.txt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E3/E3T1.txt)
  
 ### Task 2: Accessing Secret Recipe Data File from S3
  
@@ -287,7 +299,10 @@ Submit screenshots of your attempts and monitoring or logs from the WAF showing 
 
 **Deliverables:**
 - **E3T2_s3breach.png** - Screenshot showing the resulting breach after the brute force attack.
-- _Optional_ **Task 3** - Screenshots showing attack attempts and monitoring or logs from the WAF showing blocked attempts.
+
+You can find my third deliverable part one here:
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E3/E3T2_s3breach-1.png "E3T2_s3breach-1.png")
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E3/E3T2_s3breach-2.png "E3T2_s3breach-2.png")
 
 ## Exercise 4 - Implement Security Hardening
 
@@ -317,6 +332,9 @@ Submit answer in E4T1.txt
 **Deliverables:**
 - **E4T1.txt** - Answer to the prompts in Exercise 4, Task 1.
 
+You can find my fourth deliverable part one here:
+[E4T1.txt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E4/E4T1.txt)
+
 ### Task 2 - Hardening
 
 #### Remove SSH Vulnerability on the Application Instance
@@ -345,6 +363,9 @@ sudo service ssh restart
 **Deliverables:**
 - **E4T2_sshbruteforce.png** - Screenshot of terminal window showing the brute force attack and the remediation.
 
+You can find my fourth deliverable part two here:
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E4/E4T2_sshbruteforce.png "E4T2_sshbruteforce.png")
+
 #### Apply Network Controls to Restrict Application Server Traffic
 
 1. Update the security group which is assigned to the web application instance.  The requirement is that we only allow connections to port 5000 from the public subnet where the application load balancer resides.
@@ -354,6 +375,10 @@ sudo service ssh restart
 **Deliverables**:
 - **E4T2_networksg.png** - Screenshot of the security group change. 
 - **E4T2_sshattempt.png** - Screenshot of your SSH attempt.
+
+You can find my fourth deliverable part three here:
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E4/E4T2_networksg.png "E4T2_networksg.png")
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E4/E4T2_sshattempt.png "E4T2_sshbruteforce.png")
 
 #### Least Privilege Access to S3  
 
@@ -365,6 +390,10 @@ sudo service ssh restart
 - **E4T2_s3iampolicy.png** - Screenshot of the updated IAM policy.
 - **E4T2_s3copy.png** - Screenshot of the failed copy attempt.
 
+You can find my fourth deliverable part four here:
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E4/E4T2_s3iampolicy.png "E4T2_s3iampolicy.png")
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E4/E4T2_s3copy.png "E4T2_s3copy.png")
+
 #### Apply Default Server-side Encryption to the S3 Bucket
 
 This will cause the S3 service to encrypt any objects that are stored going forward by default.
@@ -375,6 +404,9 @@ Capture the screenshot of the secret recipes bucket showing that default encrypt
 
 **Deliverables**:
 - **E4T2_s3encryption.png** - Screenshot of the S3 bucket policy.
+
+You can find my fourth deliverable part four here:
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E4/E4T2_s3encryption.png "E4T2_s3encryption.png")
 
 ### Task 3: Check Monitoring Tools to see if the Changes that were made have Reduced the Number of Findings
 
@@ -388,6 +420,11 @@ Capture the screenshot of the secret recipes bucket showing that default encrypt
 - **E4T3_config.png** - Screenshot of Config after reevaluating the number of findings.
 - **E4T3_inspector.png** - Screenshot of Inspector after reevaluating the number of findings.
 
+You can find my fourth deliverable part five here:
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E4/E4T3_securityhub.png "E4T3_securityhub.png")
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E4/E4T3_config.png "E4T3_config.png")
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E4/E4T3_inspector.png "E4T3_inspector.png")
+
 ### Task 4: Questions and Analysis
 
 1. What additional architectural change can be made to reduce the internet-facing attack surface of the web application instance.
@@ -399,15 +436,6 @@ Submit your answers in E4T4.txt.
 
 **Deliverables**:
 - **E4T4.txt** - Answers from prompts in Exercise 4, Task 4.
-
-###  _Optional Standout Suggestion_ Task 5 - Additional Hardening
-
-Make changes to the environment by updating the cloud formation template. You would do this by copying c3-app.yml and c3-s3.yml and putting your new code into c3-app_solution.yml and c3-s3_solution.yml.
-Brainstorm and list additional hardening suggestions aside from those implemented that would protect the data in this environment. Submit your answers in E4T5.txt.
-
-**Deliverables**:
-- _Optional_ **c3-app_solution.yml** and **c3-s3_solution.yml** - updated cloud formation templates which reflect changes made in E4 tasks related to AWS configuration changes.
-- _Optional_ **E4T5.txt** - Additional hardening suggestions from Exercise 4, Task 5.
 
 ## Exercise 5 - Designing a DevSecOps Pipeline
 
@@ -442,6 +470,9 @@ Submit your design as a ppt or png image named DevSecOpsPipeline.[ppt or png].
 **Deliverables**:
 - **DevSecOpsPipline.[ppt or png]** - Your updated pipeline.
 
+You can find my fifth deliverable part 1 here:
+![picture alt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E5/DevSecOpsPipline.png "DevSecOpsPipline.png")
+
 ### Task 2 - Tools and Documentation
       
 You will need to determine appropriate tools to incorporate into the pipeline to ensure that security vulnerabilities are found.
@@ -457,15 +488,8 @@ Submit your answers in E5T2.txt
 **Deliverables**:
 - **E5T2.txt** - Answer from prompts in Exercise 5, Task 2.
 
-### _Optional Standout Suggestion_ Task 3 - Scanning Infrastructure Code
-
-- Run an infrastructure as code scanning tool on the cloud formation templates provided in the starter.
-- Take a screenshot of the tool that has correctly identified bad practices.
-- If you had completed the remediations by updating the cloud formation templates, run the scanner and compare outputs showing that insecure configurations were fixed.
-
-**Deliverables**:
-- _Optional_ **E5T3.png** - Screenshot of tool that has identified bad practices.
-- _Optional_ **E5T3.txt** - Answers from prompts in Exercise 5, Task 3.
+You can find my fifth deliverable part 2 here:
+[E5T2.txt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E5/E5T2.txt)
 
 ## Exercise 6 - Clean up 
 
@@ -474,7 +498,4 @@ Once your project has been submitted and reviewed - to prevent undesired charges
 - Delete recipe files uploaded to the S3 buckets.
 - Delete your cloud formation stacks.
 
-## _Optional Standout Suggestion_ Exercise 7 - Enjoying the Spoils of Your Good Security Work!
-
-Bake one of the desserts from the recipe text files and submit a picture. :-)
 
