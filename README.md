@@ -436,6 +436,7 @@ Submit your answers in E4T4.txt.
 
 **Deliverables**:
 - **E4T4.txt** - Answers from prompts in Exercise 4, Task 4.
+[E4T4.txt](https://github.com/AustinAMeyer/Cloud-Security-Secure-the-Recipe-Vault-Web-Application/blob/master/starter/Deliverables/E4/E4T4.txt)
 
 ## Exercise 5 - Designing a DevSecOps Pipeline
 
